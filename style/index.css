@@ -1,0 +1,72 @@
+/*BODY STYLE*/
+body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+h2{
+  font-size: 2vw;
+}
+
+.container {
+  text-align: center;
+}
+
+.form-container {
+  width: auto;
+  background-color: #fff;
+  border-radius: 1vw;
+  padding: 2vw;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#login, #register {
+  display: grid;
+}
+
+
+#login p, #register p{
+  font-size: 0.8vw;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  width: auto;
+  height: 1.2vw;
+  margin-bottom: 0.5vw;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1vw;
+  padding: 0.5vw;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  height: auto;
+  border: 0;
+  font-size: 1vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+

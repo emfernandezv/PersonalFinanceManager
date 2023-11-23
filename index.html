@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Finance Manager - Login Page">
+  <meta name="author" content="Eduardo Fernandez">
+  <title>Personal Finance Manager | Login</title>
+  <link rel="stylesheet" href="./style/base.css">
+  <link rel="stylesheet" href="./style/index.css">
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>Personal Finance App</h1>
+    <div class="form-container">
+      <div id="login">
+        <h2>Login</h2>
+        <input type="email" id="LoginEmail" placeholder="Email">
+        <input type="password" id="LoginPassword" placeholder="Password">
+        <button onclick="login()">Sign In</button>
+        <p>Don't have an account? <a href="#" onclick="toggleForm()">Register</a></p>
+      </div>
+      <div id="register" style="display: none;">
+        <h2>Register</h2>
+        <input type="text" id="RegisterFullName" placeholder="Full Name">
+        <input type="email" id="RegisterEmail" placeholder="Email">
+        <input type="password" id="RegisterPassword" placeholder="Password">
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Personal Finance Manager App - Powered by <a class="link" href="mailto:eduardo15191@gmail.com">Eduardo Fernandez</a> - 2023</p>
+  </footer>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

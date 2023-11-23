@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Finance Manager - Transactions Page">
+  <meta name="author" content="Eduardo Fernandez">
+  <title>Transactions | Personal Finance Manager</title>
+  <link rel="stylesheet" href="./style/base.css">
+  <link rel="stylesheet" href="./style/transactions.css">
+</head>
+<body>
+  <header>
+    <h1>Personal Finance Manager</h1>
+    <ul class="menu">
+      <li id="dashboard" >Dashboard</li>
+      <li id="transactions" class="active">Transactions</li>
+      <li id="logout">Logout</li>
+    </ul>
+  </header>
+  <section id="register">
+    <h2>Registration</h2>
+    <form id="registrationForm">
+      <input type="hidden" id="id" name="id">
+      <label for="type">Type:
+        <select id="type" name="type" required>
+            <option value="INCOME">
+              INCOME
+            </option>
+            <option value="EXPENSE">
+              EXPENSE
+            </option>
+        </select>
+        <br><br>
+      </label>
+      <label for="description">
+        Description:
+        <input type="text" id="description" name="description" required><br><br>
+      </label>
+      <label for="value">
+        Value:
+        <input type="money" id="value" name="value" required><br><br>
+      </label>
+      <label for="date">
+        Date:
+        <input type="date" id="date" name="date" required pattern="\d{4}-\d{2}-\d{2}"><br><br>
+      </label>
+        <input type="submit" value="Submit"><br><br>
+    </form>
+  </section>
+
+  <section id="list">
+    <h2>List of Transactions</h2>
+    <div id="tableFilter">
+      <label for="filterType">Filter by Type:
+        <select id="filterType">
+            <option value="all">ALL</option>
+            <option value="INCOME">INCOME</option>
+            <option value="EXPENSE">EXPENSE</option>
+        </select>
+    </label>
+    </div>
+    <table id="transactionList">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Transaction rows will be populated dynamically -->
+        </tbody>
+        <tfoot>
+            <!-- Rows for displaying sums per type -->
+            <tr class="sumRow" data-type="INCOME">
+                <td colspan="2" class="tableFooterTag">TOTAL INCOME</td>
+                <td id="incomeTotal">0</td>
+                <td colspan="2"></td>
+
+            </tr>
+            <tr class="sumRow" data-type="EXPENSE">
+                <td colspan="2" class="tableFooterTag">TOTAL EXPENSE</td>
+                <td id="expenseTotal">0</td>
+                <td colspan="2"></td>
+            </tr>
+        </tfoot>
+    </table>
+  </section>
+
+  <footer>
+    <p>Personal Finance Manager App - Powered by <a class="link" href="mailto:eduardo15191@gmail.com">Eduardo Fernandez</a> - 2023</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="./js/transactions.js"></script>
+</body>
+</html>

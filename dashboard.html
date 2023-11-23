@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Finance Manager - Dashboard Page">
+    <meta name="author" content="Eduardo Fernandez">
+    <title>Dashboard | Personal Finance Manager</title>
+    <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/dashboard.css">
+  </head>
+  <body>
+    <header>
+      <h1> Personal Finance Manager</h1>
+      <ul class="menu">
+        <li id="dashboard" class="active">Dashboard</li>
+        <li id="transactions" >Transactions</li>
+        <li id="logout">Logout</li>
+      </ul>
+    </header>
+
+    <main>
+      <div id="dashboardInfo">
+        <h2>Welcome</h2>
+        <h3>This is your balance to today.</h3>
+        <label for="yearFilter">
+          Filter by Year:
+          <select id="yearFilter">
+            <!-- Options for year filter will be added dynamically via JavaScript -->
+          </select>
+        </label>
+      </div>
+      <div class="chart-container">
+        <canvas id="pieChart">
+          <!-- This will be added dynamically via JavaScript -->
+        </canvas>
+      </div>
+    </main>
+
+    <footer>
+      <p>Personal Finance Manager App - Powered by 
+        <a class="link" href="mailto:eduardo15191@gmail.com">
+          Eduardo Fernandez
+        </a> 
+        - 2023
+      </p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>

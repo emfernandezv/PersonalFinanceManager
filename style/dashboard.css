@@ -1,0 +1,23 @@
+/* Styling for the chart container */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vw; 
+  width: 25vw; 
+  margin: auto; 
+}
+
+/* Styling for the canvas element within the chart container */
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#dashboardInfo {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%; 
+  padding-bottom: 3vw;
+}
+

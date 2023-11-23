@@ -1,0 +1,149 @@
+/* Main content styles */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 15vw;
+  margin: auto;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input[type="submit"] {
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+  
+ /* transactions.css */
+#registrationForm label,
+#registrationForm input,
+#registrationForm select,
+#registrationForm textarea {
+  margin-bottom: 1px; /* Adjust the value to reduce or increase the space */
+}
+
+table, form, input, label, select {
+  font-size: 1vw;
+}
+
+/* Center the table */
+#transactionList {
+  margin: 0 auto;
+}
+#transactionList thead tr th{
+  text-align: center;
+  background-color: lightgray;
+}
+
+/* Align the value field to the right */
+#transactionList td:nth-child(4) {
+  text-align: right;
+}
+
+/* Align the action buttons to the center */
+#transactionList .editBtn,
+#transactionList .saveBtn,
+#transactionList .deleteBtn {
+  text-align: center;
+}
+
+/* Align the date field to the center */
+#transactionList td:nth-child(1), td:nth-child(2), td:nth-child(5) {
+  text-align: center;
+}
+
+#register h2,#list h2{
+  margin-left: 10vw;
+  font-size: 1.5vw;
+}
+
+#tableFilter {
+  margin-left: 12vw;
+  margin-bottom: 1vw;
+}
+
+/* Style the table */
+#transactionList {
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#transactionList th, #transactionList td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#transactionList th {
+  background-color: #f2f2f2;
+  grid-row: 1/2;
+}
+
+/* Additional styling for buttons */
+.editBtn,
+.saveBtn,
+.deleteBtn {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  height: 2vw;
+  width: 5vw;
+  font-size: 0.8vw;
+  margin-right: 0.5vw;
+  
+}
+
+.editBtn {
+  background-color: #4CAF50;
+}
+
+.saveBtn {
+  background-color: #008CBA;
+}
+
+.deleteBtn {
+  background-color: #f44336;
+}
+
+.list .transactionList tfoot tr .tableFooterTag{
+  text-align: right;
+}
+
+#transactionList tbody td:first-child {
+  display: none;
+}
+
+/* Set the column widths for the table */
+#transactionList thead th:nth-child(1),
+#transactionList tbody td:nth-child(1) {
+  width: 10%; /* First column width */
+}
+
+#transactionList thead th:nth-child(2),
+#transactionList tbody td:nth-child(2) {
+  width: auto; /* type column width */
+}
+
+#transactionList thead th:nth-child(3),
+#transactionList tbody td:nth-child(3) {
+  width: auto; /* description column width */
+}
+
+#transactionList thead th:nth-child(4),
+#transactionList tbody td:nth-child(4){
+  width: 10%; /* Value width */
+}
+#transactionList thead th:nth-child(5),
+#transactionList tbody td:nth-child(5){
+  width: 10%; /* Date column width */
+} 
+
+#transactionList thead th:nth-child(6),
+#transactionList tbody td:nth-child(6){
+  width: 17%; /* action column width */
+  align-content: center;
+  align-self: center;
+} 
