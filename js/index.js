@@ -1,22 +1,25 @@
-// Firebase configuration
-const firebaseConfig = {
-  // Your Firebase configuration details here
-  apiKey: "AIzaSyBRatLckDvdHNy2uXjt3GQdQksupfPsbGQ",
-  authDomain: "personalfinancemanager-ef.firebaseapp.com",
-  databaseURL: "https://personalfinancemanager-ef-default-rtdb.firebaseio.com",
-  projectId: "personalfinancemanager-ef",
-  storageBucket: "personalfinancemanager-ef.appspot.com",
-  messagingSenderId: "421180425222",
-  appId: "1:421180425222:web:7312db316d3e8aa0876f87",
-  measurementId: "G-RY5P7FVSDZ"
-};
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+let auth = "";
+let database_ref = "";
 
-// Initialize variables
-const auth = firebase.auth();
-const database = firebase.database();
+//read the configuration from the external json file
+async function getConfigAndInitializeFirebase() {
+  try {
+    const response = await fetch('js/credentials.json');
+    const firebaseConfig = await response.json();
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Initialize variables
+    auth = firebase.auth();
+    database_ref = firebase.database().ref();
+  } catch (error) {
+    console.error('Error fetching or initializing Firebase:', error);
+  }
+}
+
+//starting the connection
+getConfigAndInitializeFirebase();
+
 
 // Set up our register function
 function register() {
@@ -37,7 +40,6 @@ function register() {
   auth.createUserWithEmailAndPassword(email, password)
     .then(() => {
       const user = auth.currentUser;
-      const database_ref = database.ref();
       const user_data = {
         email: email,
         full_name: fullName,
@@ -69,8 +71,7 @@ function login() {
   auth.signInWithEmailAndPassword(email, password)
     .then(() => {
       const user = auth.currentUser;
-      const database_ref = database.ref();
-      const user_data = {
+        const user_data = {
         last_login: Date.now()
       };
 

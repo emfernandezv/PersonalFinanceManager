@@ -14,7 +14,7 @@ function getQueryVariable(variable) {
 // Retrieve the value of 'TOKEN' from the URL
 const userId = getQueryVariable('token');
 
-// Your Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   // Your Firebase configuration details here
   apiKey: "AIzaSyBRatLckDvdHNy2uXjt3GQdQksupfPsbGQ",
@@ -32,6 +32,7 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const database = firebase.database();
+
 
 // Authentication State Listener
 auth.onAuthStateChanged(user => {
@@ -55,7 +56,7 @@ let dataSource = {};
 function loadTransactions(userId) {
   const transactionsRef = database.ref(`transactions/${userId}`);
   const yearFilter = document.getElementById('yearFilter');
-  
+
   return transactionsRef.once('value')
     .then((snapshot) => {
       const transactions = snapshot.val();
@@ -140,8 +141,8 @@ function displayPieChart(filteredData) {
           display: true,
           position: 'bottom',
           labels: {
-            boxHeight: 100,
-            boxWidth: 100,
+            boxHeight: 50,
+            boxWidth: 50,
             font: {
               size: 40
             }
